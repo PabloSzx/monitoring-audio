@@ -1,12 +1,21 @@
 {
-  "name": "monitoring-audio",
+  "name": "monitor",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "dependencies": {
     "express": "^4.16.4",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "wrtc": "^0.3.2"
+    "path": "^0.12.7",
+    "simple-peer": "^9.1.2",
+    "socket.io": "^2.2.0",
+    "socket.io-client": "^2.2.0"
+  },
+  "scripts": {
+    "build": "browserify recorder.js -o test/recorder.js && browserify player.js -o test/player.js",
+    "start": "node server.js",
+    "dev": "yarn build && yarn start"
+  },
+  "devDependencies": {
+    "browserify": "^16.2.3"
   }
 }
